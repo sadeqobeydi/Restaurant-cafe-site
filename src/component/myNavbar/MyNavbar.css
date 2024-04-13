@@ -1,0 +1,66 @@
+nav , .row{
+    margin: 0px !important;
+    width: 100% !important;
+}
+nav{
+    width: 100%;
+}
+nav .information .col p{
+    margin: 0px !important;
+}
+
+nav .navigate :where( .menu-icon , .navigate-brand ){
+    height: 45px!important;
+    display: flex;
+    align-items: center;
+
+}
+nav .navigate .navigate-menu{
+    position: absolute;
+    right: 0px;
+    background-color: rgb(33 37 41);
+    top: 100%;
+    height: 0px;
+    overflow: hidden;
+    transition: all .5s;
+}
+nav .navigate .navigate-menu.actived{
+    height:280px !important;
+    padding-bottom: 10px ;
+}
+nav .navigate .navigate-menu a {
+    padding: 10px;
+    border-radius: 6px;
+    margin: 0px 3px;
+    color: white;
+    font-weight: 500;
+}
+nav .navigate .navigate-menu a.active {
+    color: rgb(253, 168, 10);
+}
+nav .navigate .navigate-menu a.rezerv{
+    background-color:rgb(224, 146, 0);
+
+}
+
+nav .navigate .menu-icon{
+    cursor: pointer;
+    color:#dbffff;
+    margin: 0px !important;
+}
+
+
+
+
+@media screen and (min-width:768px) {
+    .navigate-menu{
+        position: static !important;
+        height: 45px!important;
+        /* background-color: white !important ; */
+    }
+}
+
+
+
+
+
