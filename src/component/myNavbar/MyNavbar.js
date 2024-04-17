@@ -31,7 +31,7 @@ function MyNavbar(){
                     <p>+989016296570 <FaPhoneAlt /></p>
                 </div>
             </Row>
-            <Row className="navigate bg-dark align-item-center py-2 position-relative w-100">
+            <Row className="navigate align-item-center py-2 position-relative w-100">
                 <div className={`navigate-menu ${activeNavigate} col-md-9 px-md-4 px-lg-5 d-flex flex-column flex-md-row `}>
                         <NavLink to='/'>صفحه اصلی</NavLink>
                         <NavLink to='/menu'>منو ها</NavLink>
