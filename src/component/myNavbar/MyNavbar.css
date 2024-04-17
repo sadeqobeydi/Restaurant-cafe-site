@@ -10,7 +10,7 @@ nav .information{
 }
 nav .information .col p{
     margin: 0px !important;
-    color: lightgray;
+    color: rgb(177, 177, 177);
 }
 
 nav .navigate :where( .menu-icon , .navigate-brand ){
