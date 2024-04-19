@@ -15,7 +15,7 @@ function Home(){
     const slids = [
         { id : 1 , title : 'غذاهای خوشمزه ما با حضور شما گرم' , url : imgslider1 },
         { id : 2 , title : 'بهترین مکان برای شروع روز شما' , url : imgslider2},
-        { id : 3 , title : 'شیرینی خامه ای آماده سرو' , url : imgslider3}
+        { id : 3 , title : 'شیرینی خامه ای آماده سرو' , url : imgslider3},
     ]
 
     const nextSlideHandler = () =>{

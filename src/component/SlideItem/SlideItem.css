@@ -12,18 +12,17 @@ header .slider .slide-content .slide-item{
     opacity: 0;
     transition: opacity 1s ;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+header .slider .slide-content .slide-item.active{
+    opacity: 1; 
+    animation: scaler 1s ease 1 forwards;
 }
 header .slider .slide-content .slide-item h3{
     transition: all 1.5s;
     transform: translateY(-20px);
-}
-
-header .slider .slide-content .slide-item.active{
-    opacity: 1; 
-    animation: scaler 1s ease 1 forwards;
-
 }
 header .slider .slide-content .slide-item.active h3{
     transform: translateY(0px);
@@ -32,4 +31,40 @@ header .slider .slide-content .slide-item.active h3{
 @keyframes scaler {
     0%{scale: 0.9;}
     100%{scale: 1;}
+}
+
+header .slider .slide-content .slide-item .content-button{
+    z-index: 55;
+    width: 100%;
+}
+header .slider .slide-content .slide-item .content-button a{
+    all: unset;
+    padding: 15px 10px;
+    border-radius: 3px;
+    font-size: 25px;
+    font-family: lalezar;
+    margin: 0px 3px;
+    transition: all 0.5s;
+    cursor: pointer;
+
+}
+header .slider .slide-content .slide-item .content-button a.order-now{
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+
+}
+header .slider .slide-content .slide-item .content-button a.order-now:hover{
+    background-color: white;
+    color: rgb(255 163 35);
+}
+
+header .slider .slide-content .slide-item .content-button a.view-menu{
+    border: 1px solid #ffa323;
+    background-color: #ffa323;
+    color: white;
+}
+header .slider .slide-content .slide-item .content-button a.view-menu:hover{
+    background-color: transparent;
+    color: #ffa323;
 }
