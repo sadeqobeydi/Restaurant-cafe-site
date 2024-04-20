@@ -1,33 +1,27 @@
-import { useEffect, useState } from 'react'
-import SlideItem from '../../component/SlideItem/SlideItem'
+import { Col, Row } from 'react-bootstrap'
 import MyNavbar from '../../component/myNavbar/MyNavbar'
-import imgslider1 from '../../images/sliderimages3.jpg'
-import imgslider2 from '../../images/sliderimages1.jpg'
-import imgslider3 from '../../images/sliderimages2.jpg'
-import { FaChevronLeft , FaChevronRight} from "react-icons/fa";
-
-
+import Slider from '../../component/slider/Slider'
+import { FaPlay } from "react-icons/fa";
+import { BsCake2 } from "react-icons/bs"; 
+import { PiBagSimpleLight } from "react-icons/pi";
+import { LuPartyPopper } from "react-icons/lu";
+import { MdFastfood } from "react-icons/md";
 import './home.css'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import CountUp from 'react-countup';
+
+
+
 function Home(){
 
-    const [currentIndex , setCurrentIndex] = useState(0)
+    const [statistics , setStatistics] = useState([]) 
 
-    const slids = [
-        { id : 1 , title : 'غذاهای خوشمزه ما با حضور شما گرم' , url : imgslider1 },
-        { id : 2 , title : 'بهترین مکان برای شروع روز شما' , url : imgslider2},
-        { id : 3 , title : 'شیرینی خامه ای آماده سرو' , url : imgslider3},
-    ]
-
-    const nextSlideHandler = () =>{
-        currentIndex < slids.length-1 ? setCurrentIndex(currentIndex+1) : setCurrentIndex(0)
-    }
-    const previousSlideHandler = ()=>{
-        currentIndex > 0 ? setCurrentIndex(currentIndex-1) : setCurrentIndex(slids.length-1)
-    }
 
     useEffect(()=>{
-        console.log(currentIndex);
-    })
+        axios.get('http://localhost:4000/statistics')
+        .then((response)=> setStatistics(response.data))
+    },[])
 
     return(
         <>
@@ -35,32 +29,82 @@ function Home(){
                 <div className='position-absolute top-0 left-0 w-100 navnigate-container'>
                     <MyNavbar/>
                 </div>
-                <div className="slider">
-                    <div className="slide-content">
-                        {slids.map(item => <SlideItem currentIndex={currentIndex} {...item}/>)}
-                    </div>
-
-                    <button className='next' onClick={nextSlideHandler}>
-                        <FaChevronRight size="25px"/>
-                    </button>
-                    <button className='previous' onClick={previousSlideHandler}>
-                        <FaChevronLeft size="25px"/>
-                    </button>
-
-                    <div className="radial-content">
-                        {
-                            slids.map((item , index) =>{
-                                return <div 
-                                    className={`point ${currentIndex===index? 'active':''}`}
-                                    onClick={()=> setCurrentIndex(index)}
-                                    >
-                                    
-                                </div>
-                            })
-                        }
-                    </div>
-                </div>
+                <Slider/>
             </header>
+
+            <article className='abouted  position-relative '>
+                <Row className='bg-white py-5 px-2 px-md-5'>
+                    <h2 className='before-title fs-1'>پارس فود</h2>
+                    <h3 className='section-title lalezar fs-1 text-center pt-3'>رستوران و کافه پارس فود</h3>
+                    <p className='iransanse pt-3 px-md-5 text-md-center'>
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد
+                    </p>
+                </Row>
+                <div className="playlogo d-flex align-items-center justify-content-center">
+                    <FaPlay size='20px' color='white'/>
+                </div>
+            </article>
+
+            <section className='statistics'>
+                <Row className='row-cols-1 row-cols-md-4'>
+                    {
+                        statistics.map((item)=> (
+                            <Col className='py-4' key={item.id}>
+                                <p className='number'>
+                                    <CountUp end={item.number} duration = '4' enableScrollSpy />
+                                </p>
+                                <p className='title'>{item.title}</p>
+                            </Col>
+                        ))
+                    }
+                </Row>
+            </section>
+
+            <section className='servises'>
+                <Row className='bg-white py-5 px-2 px-md-5'>
+                    <h2 className='before-title fs-1'>خدمات</h2>
+                    <h3 className='section-title lalezar fs-1 text-center pt-3'>انواع خدمات رسانی به مشتریان</h3>
+                </Row>
+                <Row className='justify-content-center row-cols-1 row-cols=md-3 row-cols-lg-3 row-cols-xl-4'>
+                    <Col>
+                        <div className="servis-item px-3 px-lg-5 my-3">
+                            <div className="servis-logo text-center rounded rounded-circle clo"> 
+                                <LuPartyPopper size='100'/> 
+                            </div>
+                            <h3 className='lalezar my-3'>رزرو تالار عروسی</h3>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div className="servis-item px-3 px-lg-5 my-3">
+                            <div className="servis-logo text-center rounded rounded-circle clo"> 
+                                <BsCake2 size='100'/> 
+                            </div>
+                            <h3 className='lalezar my-3'>جشن تولد و تزئینات</h3>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div className="servis-item px-3 px-lg-5 my-3">
+                            <div className="servis-logo text-center rounded rounded-circle clo"> 
+                                <MdFastfood  size='100'/> 
+                            </div>
+                            <h3 className='lalezar my-3'>سرو غذا</h3>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div className="servis-item px-3 px-lg-5 my-3">
+                            <div className="servis-logo text-center rounded rounded-circle clo"> 
+                                <PiBagSimpleLight size='100'/> 
+                            </div>
+                            <h3 className='lalezar my-3'>جلسه کاری</h3>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                        </div>
+                    </Col>
+                </Row>
+            </section>
         </>
     )
 }
