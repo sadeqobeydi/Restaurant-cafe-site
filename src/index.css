@@ -21,7 +21,10 @@
     margin: 0px;
     padding: 0px;
   }
-  
+  :root{
+    --main-Dark :  #333333;
+    --main-Oreange : #ffa323;
+  }
   ul {
     list-style-type: none;
   }

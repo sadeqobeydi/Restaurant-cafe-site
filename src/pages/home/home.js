@@ -10,17 +10,26 @@ import './home.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CountUp from 'react-countup';
-
+import MealItem from '../../component/MealItem/MealItem';
 
 
 function Home(){
 
     const [statistics , setStatistics] = useState([]) 
 
+    const [meals , setMeals] = useState([])
+
+
 
     useEffect(()=>{
+        
         axios.get('http://localhost:4000/statistics')
         .then((response)=> setStatistics(response.data))
+        
+        
+        axios.get('http://localhost:4000/meal')
+        .then((response)=> setMeals(response.data))
+
     },[])
 
     return(
@@ -66,7 +75,7 @@ function Home(){
                     <h2 className='before-title fs-1'>خدمات</h2>
                     <h3 className='section-title lalezar fs-1 text-center pt-3'>انواع خدمات رسانی به مشتریان</h3>
                 </Row>
-                <Row className='justify-content-center row-cols-1 row-cols=md-3 row-cols-lg-3 row-cols-xl-4'>
+                <Row className='justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4'>
                     <Col>
                         <div className="servis-item px-3 px-lg-5 my-3">
                             <div className="servis-logo text-center rounded rounded-circle clo"> 
@@ -96,13 +105,41 @@ function Home(){
                     </Col>
                     <Col>
                         <div className="servis-item px-3 px-lg-5 my-3">
-                            <div className="servis-logo text-center rounded rounded-circle clo"> 
+                            <div className="servis-logo text-center rounded rounded-circle"> 
                                 <PiBagSimpleLight size='100'/> 
                             </div>
                             <h3 className='lalezar my-3'>جلسه کاری</h3>
                             <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
                         </div>
                     </Col>
+                </Row>
+            </section>
+
+            <section className='meal my-4'>
+                <Row className='bg-white py-5 px-2 px-md-5'>
+                    <h2 className='before-title fs-1'>وعده غذایی بهداشتی</h2>
+                    <h3 className='section-title lalezar fs-1 text-center pt-3'>منوی غدایی پارس فود</h3>
+                </Row>
+                <Row >
+                    {
+                        meals.map( (meal) =>{
+                            return (
+                                <Col className=''>
+                                    <h3 className='meal-title text-center vazir mb-3'>{meal.mealname}</h3>
+                                    {
+                                        meal.items.map((item)=>{
+                                            return (
+                                                <div className='p-0 bg-success col' key={item.id}>
+                                                    <MealItem {...item}/>
+                                                </div>
+                                            )
+                                        })
+                                    }
+
+                                </Col>
+                            )
+                        })
+                    }
                 </Row>
             </section>
         </>

@@ -1,5 +1,5 @@
 import './Slider.css'
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { FaChevronLeft , FaChevronRight} from "react-icons/fa";
 import SlideItem from '../../component/SlideItem/SlideItem'
 import imgslider1 from '../../images/sliderimages3.jpg'
@@ -27,7 +27,7 @@ function Slider(){
     return(
         <div className="slider">
             <div className="slide-content">
-                {slids.map(item => <SlideItem currentIndex={currentIndex} {...item}/>)}
+                {slids.map(item => <SlideItem key={item.id} currentIndex={currentIndex} {...item}/>)}
             </div>
 
             <button className='next' onClick={nextSlideHandler}>
@@ -55,4 +55,4 @@ function Slider(){
     )
 }
 
-export default Slider
+export default memo(Slider)

@@ -64,6 +64,12 @@ section.servises .servis-item p{
     color: #666666;
     text-align: justify;
 }
+/* ------------------------------------------------------------------- */
+section.meal h3.meal-title{
+    font-weight: bolder;
+    color: #333333;
+}
+
 
 
 @media screen and (min-width : 992px) {
