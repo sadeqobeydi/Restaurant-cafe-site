@@ -12,26 +12,26 @@
         {
             "mealname" : "صبحانه",
             "items" : [
-                {"id": 1 , "food" : "املت آلمانی" , "Components" : "تخم مرغ ، سیب زمینی ، سوسیس ، قارچ" , "price" : "40,000"},
-                {"id": 2 , "food" : "املت هندی" , "Components" : "تخم مرغ ، ناگت مرغ ، سبزیجات ، قارچ" , "price" : "30,000"},
-                {"id": 3 , "food" : "آش" , "Components" : " پیاز داغ ، لپه ، گوشت" , "price" : "30,000"}
+                {"id": 1 , "image" : "https://preview.colorlib.com/theme/appetizer/images/breakfast-1.jpg" , "food" : "املت آلمانی" , "Components" : "تخم مرغ ، سیب زمینی ، سوسیس ، قارچ" , "price" : "40,000"},
+                {"id": 2 , "image" : "https://preview.colorlib.com/theme/appetizer/images/breakfast-2.jpg" , "food" : "املت هندی" , "Components" : "تخم مرغ ، ناگت مرغ ، سبزیجات ، قارچ" , "price" : "30,000"},
+                {"id": 3 , "image" : "https://preview.colorlib.com/theme/appetizer/images/breakfast-3.jpg" , "food" : "آش" , "Components" : " پیاز داغ ، لپه ، گوشت" , "price" : "30,000"}
             ]
 
         },
         {
             "mealname" : "ناهار",
             "items" : [
-                {"id": 1 , "food" : "ساندویچ هات داگ مخصوص" , "Components" : "هات داگ پنیری ، قارچ ، فلفل دلمه ای " , "price" : "80,000"},
-                {"id": 2 , "food" : "اکبر جوجه" , "Components" : "ران مرغ ، سوپ مخصوص ، سیزیجات" , "price" : "90,000"},
-                {"id": 3 , "food" : "سوخاری بدون استخوان" , "Components" : "  سینه مرغ ، آرد سوخاری ، تخم مرغ" , "price" : "120,000"}
+                {"id": 1 , "image" : "https://preview.colorlib.com/theme/appetizer/images/lunch-1.jpg" , "food" : "ساندویچ هات داگ مخصوص" , "Components" : "هات داگ پنیری ، قارچ ، فلفل دلمه ای " , "price" : "80,000"},
+                {"id": 2 , "image" : "https://preview.colorlib.com/theme/appetizer/images/lunch-2.jpg" , "food" : "اکبر جوجه" , "Components" : "ران مرغ ، سوپ مخصوص ، سیزیجات" , "price" : "90,000"},
+                {"id": 3 , "image" : "https://preview.colorlib.com/theme/appetizer/images/lunch-3.jpg" , "food" : "سوخاری بدون استخوان" , "Components" : "  سینه مرغ ، آرد سوخاری ، تخم مرغ" , "price" : "120,000"}
             ]
         },
         {
             "mealname" : "شام",
             "items" : [
-                {"id": 1 , "food" : "کباب مگینی و سالاد سزار" , "Components" : " سالاد سزار ، کباب ، گوجه کبابی " , "price" : "200,000"},
-                {"id": 2 , "food" : "پنه آلفردو" , "Components" : " پاستا ، سینه مرغ ، سس پنه ، خامه" , "price" : "140,000"},
-                {"id": 3 ,"food" : "شام انگلیسی" , "Components" : "گوجه ، قارج ، تخم مرغ ، ژامبون" , "price" : "90,000"}
+                {"id": 1 , "image" : "https://preview.colorlib.com/theme/appetizer/images/dinner-1.jpg" , "food" : "کباب مگینی و سالاد سزار" , "Components" : " سالاد سزار ، کباب ، گوجه کبابی " , "price" : "200,000"},
+                {"id": 2 , "image" : "https://preview.colorlib.com/theme/appetizer/images/dinner-2.jpg" , "food" : "پنه آلفردو" , "Components" : " پاستا ، سینه مرغ ، سس پنه ، خامه" , "price" : "140,000"},
+                {"id": 3 , "image" : "https://preview.colorlib.com/theme/appetizer/images/dinner-3.jpg" ,"food" : "شام انگلیسی" , "Components" : "گوجه ، قارج ، تخم مرغ ، ژامبون" , "price" : "90,000"}
             ]
         }
 

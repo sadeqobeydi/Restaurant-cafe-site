@@ -1,0 +1,29 @@
+section.meal .cards-content .image-box {
+    flex: 100px 0 0;
+}
+section.meal .cards-content .image-box img{
+    width: 100px;
+    height: 100px;
+    
+}
+section.meal .cards-content .discribe-content{
+    flex-grow: 1;
+}
+section.meal .cards-content .discribe-content .title-price h3{
+    flex-grow: 1;
+    color: rgb(65, 52, 64);
+}
+section.meal .cards-content .discribe-content .title-price span.price{
+    border-bottom: 2px solid #ffa323;
+    transition: all .5s;
+}
+
+section.meal .cards-content:hover  .discribe-content .title-price span.price{
+    border-bottom: 2px solid #ffffff;
+    color : white
+}
+section.meal .cards-content p.component-food{
+    color: #64304d;
+    font-weight: 500;
+}
+

@@ -69,9 +69,21 @@ section.meal h3.meal-title{
     font-weight: bolder;
     color: #333333;
 }
+section.meal .cards-content{
+    border: 1px solid #e6e6e6;;
+    transition: all .4s;
+    /* min-height: 210px; */
+}
+section.meal .cards-content:hover{
+    background-color: #ffa323;
+}
 
 
-
+@media screen and (min-width : 768px){
+    section.meal .cards-content{
+        min-height: 210px;
+    }
+}
 @media screen and (min-width : 992px) {
     section.statistics{
         background: url('../../images/bg_4.jpg') fixed;

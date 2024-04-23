@@ -120,17 +120,17 @@ function Home(){
                     <h2 className='before-title fs-1'>وعده غذایی بهداشتی</h2>
                     <h3 className='section-title lalezar fs-1 text-center pt-3'>منوی غدایی پارس فود</h3>
                 </Row>
-                <Row >
+                <Row className=''>
                     {
                         meals.map( (meal) =>{
                             return (
-                                <Col className=''>
+                                <Col className='col-12 col-md-6 col-lg-4' key={meal.mealname}>
                                     <h3 className='meal-title text-center vazir mb-3'>{meal.mealname}</h3>
                                     {
                                         meal.items.map((item)=>{
                                             return (
-                                                <div className='p-0 bg-success col' key={item.id}>
-                                                    <MealItem {...item}/>
+                                                <div className='cards-content   p-3 my-4  d-flex flex-row rounded-3 shadow' key={item.id}>
+                                                    <MealItem  {...item}/>
                                                 </div>
                                             )
                                         })

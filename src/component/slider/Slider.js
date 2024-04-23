@@ -27,7 +27,15 @@ function Slider(){
     return(
         <div className="slider">
             <div className="slide-content">
-                {slids.map(item => <SlideItem key={item.id} currentIndex={currentIndex} {...item}/>)}
+                {slids.map(item => (
+                    <div 
+                        className={`slide-item ${currentIndex+1 === item.id ? "active" : ""}`}
+                        style={{backgroundImage : `url(${item.url})`}}
+                        key={item.id}
+                    >
+                        <SlideItem  currentIndex={currentIndex} {...item}/>
+                    </div>
+                ))}
             </div>
 
             <button className='next' onClick={nextSlideHandler}>
